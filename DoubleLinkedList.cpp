@@ -17,17 +17,33 @@ DoubleLinkedList::DoubleLinkedList() {
 }
 
 DoubleLinkedList::~DoubleLinkedList() {
-
+    Node* n = getHead();
+    while(n != nullptr) {
+        // Pointer to node to be deleted
+        Node* garbage = n;
+        // Move on to the next
+        n = n->getNext();
+        // Delete the garbage node
+        delete garbage;
+    }
 }
 
 void DoubleLinkedList::addToHead(int val) {
-    Node* n;
-    if (head == nullptr) {
-        n = new Node(val, nullptr, nullptr);
-    } else {
-        n = new Node(val, head->next, nullptr);
+    // This constructor instantiates with next and prev set to nullptr
+    Node* n = new Node(val);
+    // Set a pointer to the current head
+    Node* h = getHead();
+    // Set next if there's a head
+    if (h != nullptr) {
+        n->setNext(h);
     }
-    head = n;
+    // Set a pointer to the current head
+    Node* t = getTail();
+    // Set the tail if none exists
+    if (t == nullptr) {
+        setTail(n);
+    }
+    setHead(n);
 }
 
 void DoubleLinkedList::addToTail(int val) {
@@ -47,10 +63,12 @@ void DoubleLinkedList::printItem(Node *item) {
 }
 
 void DoubleLinkedList::printList() {
-    Node *p = head;
-    while (p != nullptr) {
-        cout << p->val << endl;
-        p = p->next;
+    Node* n = getHead();
+    while(n != nullptr) {
+        // Print the value
+        cout << n->getValue() << endl;
+        // Move on to the next
+        n = n->getNext();
     }
 }
 
@@ -60,4 +78,12 @@ Node *DoubleLinkedList::getHead() {
 
 Node *DoubleLinkedList::getTail() {
     return tail;
+}
+
+void DoubleLinkedList::setHead(Node *n) {
+    head = n;
+}
+
+void DoubleLinkedList::setTail(Node *n) {
+    tail = n;
 }

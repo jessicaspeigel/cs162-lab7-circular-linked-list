@@ -15,6 +15,8 @@ class DoubleLinkedList {
 private:
     Node* head;
     Node* tail;
+    void setHead(Node* n);
+    void setTail(Node* n);
 
 public:
     DoubleLinkedList();

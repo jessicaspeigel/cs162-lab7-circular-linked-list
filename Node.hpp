@@ -11,11 +11,21 @@
 
 class Node {
 
-public:
-    Node(int val, Node* next, Node* prev);
+private:
     int val;
     Node* next;
     Node* prev;
+
+public:
+    Node(int val, Node* next, Node* prev);
+    Node(int val);
+    int getValue();
+    void setValue(int val);
+    Node* getNext();
+    void setNext(Node *next);
+    Node* getPrev();
+    void setPrev(Node *prev);
+
 
 };
 
