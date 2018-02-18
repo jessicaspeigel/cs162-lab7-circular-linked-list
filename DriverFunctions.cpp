@@ -2,7 +2,7 @@
 ** Author: Jessica Speigel
 ** Assignment: CS162 cs162_lab_6
 ** Date: 02/16/2018
-** Description: Implementation for DriverFunctions class.
+** Description: Implementation for Driver Functions.
 ****************************************************/
 #include "DriverFunctions.hpp"
 #include "InputValidation.hpp"
@@ -24,12 +24,19 @@ void addNewHeadNode(DoubleLinkedList *list) {
     list->addToHead(val);
     // Print the new list
     cout << endl;
-    cout << "Your list now contains the following values:" << endl;
+    cout << "Node added to head! Your list now contains the following values:" << endl;
     list->printList();
 }
 
 void addNewTailNode(DoubleLinkedList *list) {
-
+    // Get an integer to add to the list
+    int val = getIntegerWithMinMax("Please enter a positive integer to add to the list.", 0, 65535);
+    // Add it to the list
+    list->addToTail(val);
+    // Print the new list
+    cout << endl;
+    cout << "Node added to tail! Your list now contains the following values:" << endl;
+    list->printList();
 }
 
 void deleteHeadNode(DoubleLinkedList *list) {

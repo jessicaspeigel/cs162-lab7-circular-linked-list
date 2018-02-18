@@ -2,7 +2,8 @@
 ** Author: Jessica Speigel
 ** Assignment: CS162 cs162_lab_6
 ** Date: 02/16/2018
-** Description: Implementation for DoublyLinkedList class.
+** Description: Implementation for DoublyLinkedList
+** class.
 ****************************************************/
 #include "DoubleLinkedList.hpp"
 #include <iostream>
@@ -28,6 +29,11 @@ DoubleLinkedList::~DoubleLinkedList() {
     }
 }
 
+/****************************************************
+** Description: Adds a new node to the head of the
+** list.
+****************************************************/
+
 void DoubleLinkedList::addToHead(int val) {
     // This constructor instantiates with next and prev set to nullptr
     Node* n = new Node(val);
@@ -37,7 +43,7 @@ void DoubleLinkedList::addToHead(int val) {
     if (h != nullptr) {
         n->setNext(h);
     }
-    // Set a pointer to the current head
+    // Set a pointer to the current tail
     Node* t = getTail();
     // Set the tail if none exists
     if (t == nullptr) {
@@ -46,8 +52,30 @@ void DoubleLinkedList::addToHead(int val) {
     setHead(n);
 }
 
-void DoubleLinkedList::addToTail(int val) {
+/****************************************************
+** Description: Adds a new node to the tail of the
+** list.
+****************************************************/
 
+void DoubleLinkedList::addToTail(int val) {
+    // This constructor instantiates with next and prev set to nullptr
+    Node* n = new Node(val);
+    // Set a pointer to the current tail
+    Node* t = getTail();
+    if (t != nullptr) {
+        // Set the prev pointer to point to the old tail if one exists
+        n->setPrev(t);
+        // Set the next pointer of the old tail to the new tail
+        t->setNext(n);
+    }
+    // Set the tail to the new node
+    setTail(n);
+    // Set a pointer to the current head
+    Node* h = getHead();
+    // Set the head if none exists
+    if (h == nullptr) {
+        setHead(n);
+    }
 }
 
 void DoubleLinkedList::deleteHead() {
