@@ -42,6 +42,8 @@ void DoubleLinkedList::addToHead(int val) {
     // Set next if there's a head
     if (h != nullptr) {
         n->setNext(h);
+        // Set prev pointer of head to the new node
+        h->setPrev(n);
     }
     // Set a pointer to the current tail
     Node* t = getTail();
