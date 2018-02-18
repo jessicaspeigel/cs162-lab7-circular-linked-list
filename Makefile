@@ -1,5 +1,5 @@
-output: main.o Menu.o InputValidation.o RecursiveFunctions.o
-	g++ -std=c++0x -g -Wall -pedantic-errors main.o Menu.o InputValidation.o RecursiveFunctions.o -o lab5
+output: main.o Menu.o InputValidation.o DriverFunctions.o DoubleLinkedList.o Node.o
+	g++ -std=c++0x -g -Wall -pedantic-errors main.o Menu.o InputValidation.o DriverFunctions.o DoubleLinkedList.o Node.o -o lab6
 
 main.o: main.cpp
 	g++ -std=c++0x -g -Wall -pedantic-errors -c main.cpp
@@ -10,8 +10,14 @@ Menu.o: Menu.cpp
 InputValidation.o: InputValidation.cpp
 	g++ -std=c++0x -g -Wall -pedantic-errors -c InputValidation.cpp
 
-RecursiveFunctions.o: RecursiveFunctions.cpp
-	g++ -std=c++0x -g -Wall -pedantic-errors -c RecursiveFunctions.cpp
+DriverFunctions.o: DriverFunctions.cpp
+	g++ -std=c++0x -g -Wall -pedantic-errors -c DriverFunctions.cpp
+
+DoubleLinkedList.o: DoubleLinkedList.cpp
+	g++ -std=c++0x -g -Wall -pedantic-errors -c DoubleLinkedList.cpp
+
+Node.o: Node.cpp
+	g++ -std=c++0x -g -Wall -pedantic-errors -c Node.cpp
 
 clean:
-	rm *.o lab5
+	rm *.o lab6
