@@ -17,7 +17,7 @@ private:
     Node* tail;
     void setHead(Node* n);
     void setTail(Node* n);
-    bool deleteNode(Node *garbage);
+    //bool deleteNode(Node *garbage);
     bool deleteNodeByValue(int val);
 
 public:
@@ -29,8 +29,10 @@ public:
     bool deleteTail();
     void printItem(Node* item);
     void printList();
+    void printListInReverse();
     Node* getHead();
     Node* getTail();
+    void clearList();
 
 };
 

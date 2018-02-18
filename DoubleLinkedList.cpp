@@ -12,12 +12,24 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+/****************************************************
+** Constructors / Destructor
+****************************************************/
+
 DoubleLinkedList::DoubleLinkedList() {
     head = nullptr;
     tail = nullptr;
 }
 
 DoubleLinkedList::~DoubleLinkedList() {
+    clearList();
+}
+
+/****************************************************
+** Description: Deletes all items in the list.
+****************************************************/
+
+void DoubleLinkedList::clearList() {
     Node* n = getHead();
     while(n != nullptr) {
         // Pointer to node to be deleted
@@ -132,11 +144,29 @@ void DoubleLinkedList::printList() {
     if (n == nullptr) {
         cout << "This list is empty." << endl;
     }
-    while(n != nullptr) {
+    while (n != nullptr) {
         // Print the value
         printItem(n);
         // Move on to the next
         n = n->getNext();
+    }
+}
+
+/****************************************************
+** Description: Prints the list from tail to head.
+****************************************************/
+
+void DoubleLinkedList::printListInReverse() {
+    Node* n = getTail();
+    // Print a message if the list is empty
+    if (n == nullptr) {
+        cout << "This list is empty." << endl;
+    }
+    while (n != nullptr) {
+        // Print the value
+        printItem(n);
+        // Move on to the next
+        n = n->getPrev();
     }
 }
 

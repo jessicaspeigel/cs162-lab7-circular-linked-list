@@ -64,7 +64,7 @@ int main() {
                 printTailValue(list);
                 break;
             case 8: // Create a linked list from a text file
-                createLinkedListFromFile();
+                createLinkedListFromFile(list);
                 break;
 
         }

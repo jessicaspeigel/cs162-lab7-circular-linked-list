@@ -24,6 +24,6 @@ void printHeadValue(DoubleLinkedList *list);
 
 void printTailValue(DoubleLinkedList *list);
 
-void createLinkedListFromFile();
+void createLinkedListFromFile(DoubleLinkedList *list);
 
 #endif //CS162_LAB_6_DRIVERFUNCTIONS_HPP
