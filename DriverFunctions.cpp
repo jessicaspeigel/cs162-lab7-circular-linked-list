@@ -40,11 +40,23 @@ void addNewTailNode(DoubleLinkedList *list) {
 }
 
 void deleteHeadNode(DoubleLinkedList *list) {
-
+    bool deleted = list->deleteHead();
+    // Print the new list
+    cout << endl;
+    if (deleted) {
+        cout << "Head deleted! Your list now contains the following values:" << endl;
+    }
+    list->printList();
 }
 
 void deleteTailNode(DoubleLinkedList *list) {
-
+    bool deleted = list->deleteTail();
+    // Print the new list
+    cout << endl;
+    if (deleted) {
+        cout << "Tail deleted! Your list now contains the following values:" << endl;
+    }
+    list->printList();
 }
 
 void reverseTraverseList(DoubleLinkedList *list) {
@@ -52,11 +64,11 @@ void reverseTraverseList(DoubleLinkedList *list) {
 }
 
 void printHeadValue(DoubleLinkedList *list) {
-
+    list->printItem(list->getHead());
 }
 
 void printTailValue(DoubleLinkedList *list) {
-
+    list->printItem(list->getTail());
 }
 
 void createLinkedListFromFile() {

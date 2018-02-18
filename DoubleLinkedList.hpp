@@ -17,14 +17,16 @@ private:
     Node* tail;
     void setHead(Node* n);
     void setTail(Node* n);
+    bool deleteNode(Node *garbage);
+    bool deleteNodeByValue(int val);
 
 public:
     DoubleLinkedList();
     ~DoubleLinkedList();
     void addToHead(int val);
     void addToTail(int val);
-    void deleteHead();
-    void deleteTail();
+    bool deleteHead();
+    bool deleteTail();
     void printItem(Node* item);
     void printList();
     Node* getHead();
