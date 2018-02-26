@@ -1,29 +1,21 @@
 /****************************************************
 ** Author: Jessica Speigel
-** Assignment: CS162 cs162_lab_6
-** Date: 02/16/2018
-** Description: These functions drive the Linked
-** List operations chosen from the menu in main().
+** Assignment: CS162 cs162_lab_7
+** Date: 02/25/2018
+** Description: These functions drive the Circular
+** Linked List operations chosen from the main menu.
 ****************************************************/
-#ifndef CS162_LAB_6_DRIVERFUNCTIONS_HPP
-#define CS162_LAB_6_DRIVERFUNCTIONS_HPP
+#ifndef CS162_LAB_7_DRIVERFUNCTIONS_HPP
+#define CS162_LAB_7_DRIVERFUNCTIONS_HPP
 
-#include "DoubleLinkedList.hpp"
+#include "Queue.hpp"
 
-void addNewHeadNode(DoubleLinkedList *list);
+void addToBack(Queue *list);
 
-void addNewTailNode(DoubleLinkedList *list);
+void deleteHeadNode(Queue *list);
 
-void deleteHeadNode(DoubleLinkedList *list);
+void printHeadValue(Queue *list);
 
-void deleteTailNode(DoubleLinkedList *list);
+void printList(Queue *list);
 
-void reverseTraverseList(DoubleLinkedList *list);
-
-void printHeadValue(DoubleLinkedList *list);
-
-void printTailValue(DoubleLinkedList *list);
-
-void createLinkedListFromFile(DoubleLinkedList *list);
-
-#endif //CS162_LAB_6_DRIVERFUNCTIONS_HPP
+#endif //CS162_LAB_7_DRIVERFUNCTIONS_HPP

@@ -9,4 +9,4 @@ add_executable(cs162_lab_6
         main.cpp
         Menu.cpp
         Menu.hpp
-        DriverFunctions.cpp DriverFunctions.hpp Node.cpp Node.hpp DoubleLinkedList.cpp DoubleLinkedList.hpp)
+        DriverFunctions.cpp DriverFunctions.hpp Queue.cpp Queue.hpp)

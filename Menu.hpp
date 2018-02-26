@@ -1,7 +1,7 @@
 /****************************************************
 ** Author: Jessica Speigel
-** Assignment: CS162 Lab_5
-** Date: 02/06/2018
+** Assignment: CS162 Lab_7
+** Date: 02/25/2018
 ** Description: Menu class definition.
 ****************************************************/
 
